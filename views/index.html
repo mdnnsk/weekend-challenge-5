@@ -20,7 +20,7 @@
         <div ng-show="tab == 1">
           <h2>Instructions</h2>
           <p>
-            Add your pet to the list on the third tab and watch them display on the second tab!
+            Add your pet to the list on the "ADD PET" tab and watch them display on the "VIEW PETS" tab!
           </p>
         </div>
 
@@ -31,7 +31,7 @@
                     <p>Pet name: {{record.pet_name }}</p>
                     <p>Animal: {{record.pet_type }}</p>
                     <p>Age: {{record.pet_age}}</p>
-                    <p><img ng-src='{{record.image_url}}'></p>
+                    <p><img class="animalImg" ng-src='{{record.image_url}}'></p>
                   </div>
                 </div>
          </div>

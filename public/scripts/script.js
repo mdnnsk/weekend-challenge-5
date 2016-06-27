@@ -17,6 +17,8 @@ myApp.controller('controller', ['$scope', '$http', function( $scope , $http ){
       pet_age: $scope.petAgeIn,
       image_url: $scope.urlIn
     };
+    // document.getElementById("petForm").reset();
+    // petForm.$setPristine();-no work :(
 console.log('in scope' + petIn);
     $http({
       method: 'POST',
