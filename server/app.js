@@ -30,16 +30,16 @@ app.get('/', function(req,res){
 });
 
 app.get('/pets', function(req,res){
-  console.log('hit the get route');
+  // console.log('hit the get route');
     pet.find().then( function( data ){
-      console.log(data);
+      // console.log(data);
       res.send( data );
     });
   });
 
 app.post('/pets', function(req,res){
-  console.log('hit pets post');
-  console.log(req.body);
+  // console.log('hit pets post');
+  // console.log(req.body);
   var sendPet = new pet ({
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
@@ -55,8 +55,17 @@ app.post('/pets', function(req,res){
       res.sendStatus(200);
     }
   });
+});
 
-
-
-
+  app.delete('/pets', function(req,res){
+  console.log('delete route');
+  pet.findOne({_id: req.body.id}, function (err, userResult){
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }else{
+      pet.remove({_id:userResult._id}, function(err) {});
+      res.sendStatus(200);
+    }
+  });
 });

@@ -9,7 +9,7 @@
   </head>
   <body ng-controller="controller">
 
-      <h1>Nu Pet Chan</h1>
+      <h1>NuPet-Chan</h1>
 
       <div ng-init="tab=1">
 
@@ -32,6 +32,7 @@
                     <p>Animal: {{record.pet_type }}</p>
                     <p>Age: {{record.pet_age}}</p>
                     <p><img class="animalImg" ng-src='{{record.image_url}}'></p>
+                    <button type="button" name="button" id="{{ record._id }}" class="deleteButton tab" ng-click="deletePet()">DELETE</button>
                   </div>
                 </div>
          </div>
@@ -43,7 +44,7 @@
                     <p><input type="text" id="petTypeIn" name="name" value="" ng-model="petTypeIn" placeholder="What kind of pet is it?"></p>
                     <p><input type="text" id="petAgeIn" name="name" value="" ng-model="petAgeIn" placeholder="How old is your pet?"></p>
                     <p><input type="text" id="urlIn" name="name" value="" ng-model="urlIn" placeholder="Enter your image URL"></p>
-                    <p><button type="button" name="button" ng-click="getUserInput()" id="submitButton">SUBMIT</button></p>
+                    <p><button type="button" name="button" ng-click="getUserInput()" id="submitButton" class="tab">SUBMIT</button></p>
                     <!-- <button type="button" name="button" ng-click="getPets()" id="getButton">GET</button> -->
                   </form>
                 </div>

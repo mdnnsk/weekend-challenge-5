@@ -19,8 +19,14 @@ body {
     color: #FFF;
     border: 1px solid black;
 	border-radius: 5px;
+
 }
 .tab:hover{
 	background-color: #4a4a4a;
 	color: #FFF;
+}
+
+.deleteButton {
+  margin-bottom: 5px;
+
 }
