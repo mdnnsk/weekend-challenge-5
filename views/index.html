@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend Challenge 5</title>
+    <link rel="stylesheet" href="./css/styles.css" charset="utf-8">
+    <script src="./vendors/angular.min.js" charset="utf-8"></script>
+    <script src="./scripts/script.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="controller">
+
+      <h1>The pet board</h1>
+      <div class="inputDiv">
+        <form class="petForm" action="/pets" method="post" >
+          <input type="text" id="petNameIn" name="name" value="" ng-model="petNameIn" placeholder="What is your pet's name?">
+          <input type="text" id="petTypeIn" name="name" value="" ng-model="petTypeIn" placeholder="What kind of pet is it?">
+          <input type="text" id="petAgeIn" name="name" value="" ng-model="petAgeIn" placeholder="How old is your pet?">
+          <input type="text" id="urlIn" name="name" value="" ng-model="urlIn" placeholder="Enter your image URL">
+          <button type="button" name="button" ng-click="getUserInput()" id="submitButton">SUBMIT</button>
+          <button type="button" name="button" ng-click="getPets()" id="getButton">GET</button>
+        </form>
+      </div>
+      <div class="outputDiv">
+
+      </div>
+      <!-- <table >
+        <tr>
+          <th>Name</th>
+          <th>Assignment Number</th>
+          <th>Score</th>
+          <th>Date</th>
+        </tr>
+        <tr ng-repeat="record in allTheRecords">
+          <td>{{record.student_name }}</td>
+          <td>{{record.assignment_number }}</td>
+          <td>{{record.score}}</td>
+          <td>{{record.date_completed|date}}</td>
+        </tr> -->
+      <!-- </table> -->
+  </body>
+</html>
