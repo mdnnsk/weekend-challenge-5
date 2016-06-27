@@ -5,3 +5,17 @@ body {
 .animalDiv {
   border-top: 1px solid #f0e0d6;
 }
+
+.tab {
+    list-style: none;
+    padding: 10px;
+    display:inline-block;
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid black;
+	border-radius: 5px;
+}
+.tab:hover{
+	background-color: #4a4a4a;
+	color: #FFF;
+}

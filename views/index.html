@@ -10,22 +10,43 @@
   <body ng-controller="controller">
 
       <h1>Nu Pet Chan</h1>
-      <div class="inputDiv">
-        <form class="petForm" action="/pets" method="post" >
-          <input type="text" id="petNameIn" name="name" value="" ng-model="petNameIn" placeholder="What is your pet's name?">
-          <input type="text" id="petTypeIn" name="name" value="" ng-model="petTypeIn" placeholder="What kind of pet is it?">
-          <input type="text" id="petAgeIn" name="name" value="" ng-model="petAgeIn" placeholder="How old is your pet?">
-          <input type="text" id="urlIn" name="name" value="" ng-model="urlIn" placeholder="Enter your image URL">
-          <button type="button" name="button" ng-click="getUserInput()" id="submitButton">SUBMIT</button>
-          <!-- <button type="button" name="button" ng-click="getPets()" id="getButton">GET</button> -->
-        </form>
-      </div>
-      <div class="outputDiv">
-        <div class="animalDiv" ng-repeat="record in allThePets">
-            <p>Pet name: {{record.pet_name }}</p>
-            <p>Animal: {{record.pet_type }}</p>
-            <p>Age: {{record.pet_age}}</p>
-            <p><img ng-src='{{record.image_url}}'></p>
+
+      <div ng-init="tab=1">
+
+        <div class="tab" ng-click="tab = 1">HOME</div>
+        <div class="tab" ng-click="tab = 2">VIEW PETS</div>
+        <div class="tab" ng-click="tab = 3">ADD PET</div>
+
+        <div ng-show="tab == 1">
+          <h2>Instructions</h2>
+          <p>
+            Add your pet to the list on the third tab and watch them display on the second tab!
+          </p>
+        </div>
+
+        <div ng-show="tab == 2">
+            <h1>LOOK AT ANIMALS</h1>
+                <div class="outputDiv">
+                  <div class="animalDiv" ng-repeat="record in allThePets">
+                    <p>Pet name: {{record.pet_name }}</p>
+                    <p>Animal: {{record.pet_type }}</p>
+                    <p>Age: {{record.pet_age}}</p>
+                    <p><img ng-src='{{record.image_url}}'></p>
+                  </div>
+                </div>
+         </div>
+
+        <div ng-show="tab == 3">
+            <div class="inputDiv">
+                  <form class="petForm" action="/pets" method="post" >
+                    <p><input type="text" id="petNameIn" name="name" value="" ng-model="petNameIn" placeholder="What is your pet's name?"></p>
+                    <p><input type="text" id="petTypeIn" name="name" value="" ng-model="petTypeIn" placeholder="What kind of pet is it?"></p>
+                    <p><input type="text" id="petAgeIn" name="name" value="" ng-model="petAgeIn" placeholder="How old is your pet?"></p>
+                    <p><input type="text" id="urlIn" name="name" value="" ng-model="urlIn" placeholder="Enter your image URL"></p>
+                    <p><button type="button" name="button" ng-click="getUserInput()" id="submitButton">SUBMIT</button></p>
+                    <!-- <button type="button" name="button" ng-click="getPets()" id="getButton">GET</button> -->
+                  </form>
+                </div>
         </div>
       </div>
 
