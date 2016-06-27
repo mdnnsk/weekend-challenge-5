@@ -9,7 +9,7 @@
   </head>
   <body ng-controller="controller">
 
-      <h1>The pet board</h1>
+      <h1>Nu Pet Chan</h1>
       <div class="inputDiv">
         <form class="petForm" action="/pets" method="post" >
           <input type="text" id="petNameIn" name="name" value="" ng-model="petNameIn" placeholder="What is your pet's name?">
@@ -17,25 +17,17 @@
           <input type="text" id="petAgeIn" name="name" value="" ng-model="petAgeIn" placeholder="How old is your pet?">
           <input type="text" id="urlIn" name="name" value="" ng-model="urlIn" placeholder="Enter your image URL">
           <button type="button" name="button" ng-click="getUserInput()" id="submitButton">SUBMIT</button>
-          <button type="button" name="button" ng-click="getPets()" id="getButton">GET</button>
+          <!-- <button type="button" name="button" ng-click="getPets()" id="getButton">GET</button> -->
         </form>
       </div>
       <div class="outputDiv">
-
+        <div class="animalDiv" ng-repeat="record in allThePets">
+            <p>Pet name: {{record.pet_name }}</p>
+            <p>Animal: {{record.pet_type }}</p>
+            <p>Age: {{record.pet_age}}</p>
+            <p><img ng-src='{{record.image_url}}'></p>
+        </div>
       </div>
-      <!-- <table >
-        <tr>
-          <th>Name</th>
-          <th>Assignment Number</th>
-          <th>Score</th>
-          <th>Date</th>
-        </tr>
-        <tr ng-repeat="record in allTheRecords">
-          <td>{{record.student_name }}</td>
-          <td>{{record.assignment_number }}</td>
-          <td>{{record.score}}</td>
-          <td>{{record.date_completed|date}}</td>
-        </tr> -->
-      <!-- </table> -->
+
   </body>
 </html>

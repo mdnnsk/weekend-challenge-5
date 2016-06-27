@@ -29,6 +29,14 @@ app.get('/', function(req,res){
   res.sendFile(path.resolve('views/index.html'));
 });
 
+app.get('/pets', function(req,res){
+  console.log('hit the get route');
+    pet.find().then( function( data ){
+      console.log(data);
+      res.send( data );
+    });
+  });
+
 app.post('/pets', function(req,res){
   console.log('hit pets post');
   console.log(req.body);
@@ -48,13 +56,7 @@ app.post('/pets', function(req,res){
     }
   });
 
-  app.get('/pets', function(req,res){
-    console.log('hit the get route');
-      pet.find().then( function( data ){
-        console.log(data);
-        res.send( data );
-      });
-    });
+
 
 
 });

@@ -1,5 +1,13 @@
 var myApp = angular.module('myApp', []);
+
 myApp.controller('controller', ['$scope', '$http', function( $scope , $http ){
+  $http({
+    method: 'GET',
+    url: '/pets'
+    }).then( function( response ){
+    $scope.allThePets = response.data;
+    console.log(response.data);
+    });
 
   $scope.getUserInput = function(){
     console.log("in getuserinput " + $scope.petNameIn + " " + $scope.petTypeIn + " " + $scope.petAgeIn + " " +  $scope.urlIn);
@@ -15,17 +23,13 @@ console.log('in scope' + petIn);
       url: '/pets',
       data: petIn
     });
-  };
-
-  $scope.getPets = function (){
     $http({
-      method: 'GET',
-      url: '/pets'
-    }).then( function( response ){
-      $scope.allThePets = response.data;
-      console.log(response.data);
-    });
-  };
+        method: 'GET',
+        url: '/pets'
+      }).then( function( response ){
+        $scope.allThePets = response.data;
+        console.log(response.data);
+      });
 
-  // $interval(refreshAssignments(), 5000, 0, true);
+  };
 }]);
